@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "127136164485",
+    "project_id": "perfume-shop-8f6eb",
+    "storage_bucket": "perfume-shop-8f6eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127136164485:android:bd4237c399ffe14f61d7ec",
+        "android_client_info": {
+          "package_name": "com.example.perfumeshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDFRuZ73PlPHDz0ivFtiPAD3fdOvLQ1RM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

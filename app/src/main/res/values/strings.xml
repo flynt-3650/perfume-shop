@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Server Monitor</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="e_mail">E-Mail</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="register_now">Register now</string>
+    <string name="login_now">Login now</string>
+    <string name="logout">Logout</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="monitor">Monitor</string>
+    <string name="status">Status:</string>
+    <string name="monitoring_here">Monitoring here</string>
+    <string name="logs">Logs</string>
+    <string name="timestamp">Timestamp</string>
+    <string name="level">Level</string>
+    <string name="message">Message</string>
+    <string name="server_id">Server ID</string>
+    <string name="email_label">Email: %1$s</string>
+    <string name="no_data_available">No data available</string>
+    <string name="timestamp_hint">Enter timestamp (date/time)</string>
+    <string name="message_hint">Enter message</string>
+    <string name="server_id_hint">Enter server ID</string>
+    <string name="select_timestamp">Select Timestamp (Date/Time)</string>
+    <string name="todo">TODO</string>
+    <string name="change_email">Change Email</string>
+    <string name="tip">TIP:\n Go to Logs to view and create them\n Go to Monitor to view the current state of server</string>
+    <string name="total_disk_space">Total Disk Space:</string>
+    <string name="occupied_disk_space">Occupied Disk Space:</string>
+    <string name="free_disk_space_percentage">Free Disk Space Percentage:</string>
+    <string name="cpu_load">CPU Load:</string>
+    <string name="ram_usage">RAM Usage:</string>
+    <string name="uptime">Uptime:</string>
+    <string name="logged_in_users">Logged In Users:</string>
+
+    <string-array name="log_levels">
+        <item>ERROR</item>
+        <item>WARN</item>
+        <item>INFO</item>
+    </string-array>
+
+</resources>
