@@ -40,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
         Button buttonLogin = findViewById(R.id.btn_login);
 
         Button buttonRegisterNow = findViewById(R.id.btn_register_now);
-
         buttonRegisterNow.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
             startActivity(intent);
@@ -61,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            mAuth.createUserWithEmailAndPassword(email, password)
+            mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             Toast.makeText(this, "Authentication succeeded.",
