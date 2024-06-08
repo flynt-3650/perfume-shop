@@ -9,7 +9,8 @@
     <string name="login_now">Войти сейчас</string>
     <string name="logout">Выйти</string>
     <string name="home">Главная</string>
-    <string name="profile">Профиль</string>
+    <string name="about_app">О программе</string>
+    <string name="about_author">Об авторе</string>
     <string name="shop">Магазин</string>
     <string name="status">Статус:</string>
     <string name="monitoring_here">Мониторинг здесь</string>
