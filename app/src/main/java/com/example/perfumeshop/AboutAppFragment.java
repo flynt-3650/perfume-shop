@@ -32,8 +32,7 @@ public class AboutAppFragment extends Fragment {
         Button button = view.findViewById(R.id.logout);
         button.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(requireActivity(), LoginActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(requireActivity(), LoginActivity.class));
             requireActivity().finish();
         });
         return view;

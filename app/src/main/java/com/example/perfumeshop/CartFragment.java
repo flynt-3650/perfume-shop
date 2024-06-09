@@ -22,7 +22,6 @@ import java.util.List;
 
 public class CartFragment extends Fragment {
 
-    private RecyclerView cartRecyclerView;
     private PerfumeAdapter perfumeAdapter;
     private List<Perfume> cartPerfumeList;
     private DatabaseReference databaseReference;
@@ -49,7 +48,7 @@ public class CartFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Setup RecyclerView
-        cartRecyclerView = view.findViewById(R.id.cartRecyclerView);
+        RecyclerView cartRecyclerView = view.findViewById(R.id.cartRecyclerView);
         cartRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         perfumeAdapter = new PerfumeAdapter(getContext(), cartPerfumeList);

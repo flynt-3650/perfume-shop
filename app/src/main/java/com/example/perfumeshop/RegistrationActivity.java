@@ -23,8 +23,7 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
             finish();
         }
     }
@@ -40,11 +39,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
         Button buttonLoginNow = findViewById(R.id.btn_login_now);
         buttonLoginNow.setOnClickListener(v -> {
-            Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
             finish();
         });
-
 
         Button buttonRegister = findViewById(R.id.btn_register);
         buttonRegister.setOnClickListener(v -> {
@@ -52,23 +49,22 @@ public class RegistrationActivity extends AppCompatActivity {
             String password = String.valueOf(editTextPassword.getText());
 
             if (TextUtils.isEmpty(email)) {
-                Toast.makeText(this, "Email is empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Email пуст", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             if (TextUtils.isEmpty(password)) {
-                Toast.makeText(this, "Password is empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Пароль пуст", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(this,
-                            "Authentication succeeded. You can login now", Toast.LENGTH_SHORT)
+                    Toast.makeText(this, "Регистрация прошла успешно. Вы можете войти", Toast.LENGTH_SHORT)
                             .show();
 
                 } else {
-                    Toast.makeText(this, "Authentication failed.",
+                    Toast.makeText(this, "Ошибка регистрации.",
                             Toast.LENGTH_SHORT).show();
 
                 }

@@ -23,8 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
     }
@@ -41,8 +40,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Button buttonRegisterNow = findViewById(R.id.btn_register_now);
         buttonRegisterNow.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
             finish();
         });
 
@@ -51,27 +49,26 @@ public class LoginActivity extends AppCompatActivity {
             String password = String.valueOf(editTextPassword.getText());
 
             if (TextUtils.isEmpty(email)) {
-                Toast.makeText(this, "Email is empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Email пуст", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             if (TextUtils.isEmpty(password)) {
-                Toast.makeText(this, "Password is empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Пароль пуст", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
-                            Toast.makeText(this, "Authentication succeeded.",
+                            Toast.makeText(this, "Вход выполнен успешно.",
                                     Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
 
                         } else {
-                            Toast.makeText(this, "Authentication failed.",
+                            Toast.makeText(this, "Ошибка входа.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     });
