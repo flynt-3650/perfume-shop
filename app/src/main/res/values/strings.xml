@@ -39,7 +39,7 @@
 
     <string name="size_format">%d ml</string>
     <string name="price_format">$%.2f</string>
-
+    <string name="add_remove">Добавить/Убрать</string>
 
 
     <string-array name="log_levels">
