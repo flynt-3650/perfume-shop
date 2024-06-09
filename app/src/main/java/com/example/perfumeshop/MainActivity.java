@@ -1,18 +1,27 @@
 package com.example.perfumeshop;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.Navigation;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+
+
+    public static List<String> getSus() {
+        return Arrays.asList("admin@gmail.com", "superuser2@example.com");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        NotificationHelper.createNotificationChannel(this);
+        NotificationHelper.sendNotification(this, "Добро пожаловать!", "Вы вошли в приложение Perfume Shop");
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -39,5 +48,11 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        NotificationHelper.sendNotification(this, "До свидания!", "Вы вышли из приложения Perfume Shop");
     }
 }

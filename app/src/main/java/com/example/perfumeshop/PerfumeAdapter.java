@@ -16,9 +16,9 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class PerfumeAdapter extends RecyclerView.Adapter<PerfumeViewHolder> {
-    private Context context;
-    private List<Perfume> perfumeList;
-    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("perfumes");
+    private final Context context;
+    private final List<Perfume> perfumeList;
+    private final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("perfumes");
 
     // Constructor with DatabaseReference parameter
     public PerfumeAdapter(Context context, List<Perfume> perfumeList) {
@@ -49,9 +49,9 @@ public class PerfumeAdapter extends RecyclerView.Adapter<PerfumeViewHolder> {
         holder.addToCartButton.setOnClickListener(v -> {
             boolean added = !perfume.isAdded();
             perfume.setAdded(added);
-            String message = added ? "Added to cart" : "Removed from cart";
+            String message = added ? "Добавлен в корзину" : "Убран из корзины";
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-            holder.addToCartButton.setText(added ? "Remove" : "Add");
+            holder.addToCartButton.setText(added ? "Убрать" : "Добавить");
 
             // Update the 'added' attribute in the Firebase Realtime Database
             databaseReference.child(perfume.getId()).child("added").setValue(added);
