@@ -20,4 +20,14 @@
         android:name="com.example.perfumeshop.ShopFragment"
         android:label="fragment_shop"
         tools:layout="@layout/fragment_shop" />
+    <fragment
+        android:id="@+id/aboutAuthorFragment"
+        android:name="com.example.perfumeshop.AboutAuthorFragment"
+        android:label="fragment_about_author"
+        tools:layout="@layout/fragment_about_author" />
+    <fragment
+        android:id="@+id/manualFragment"
+        android:name="com.example.perfumeshop.ManualFragment"
+        android:label="fragment_manual"
+        tools:layout="@layout/fragment_manual" />
 </navigation>
